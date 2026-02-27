@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>(ILDC) Imperio Latino de Carga | American Truck Simulator</title>
-  <meta name="description" content="Convoy latinoamericano de American Truck Simulator. Unete a nuestras rutas, descarga los mods y conecta con camioneros de toda Latinoamerica.">
+  <meta name="description"
+    content="Convoy latinoamericano de American Truck Simulator. Unete a nuestras rutas, descarga los mods y conecta con camioneros de toda Latinoamerica.">
   <link rel="icon" href="img/logo.png">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- ─── NAV ─── -->
@@ -53,9 +56,17 @@
         </div>
         <div class="info-card fade-in">
           <h3>🔢 ID de Sesion</h3>
-          <p class="value" id="sessionId">76561198885257205/101</p>
-          <p class="label" style="margin-bottom:0.8rem">Pega este ID en el buscador de convoy</p>
-          <button class="copy-btn" onclick="copyId()">📋 Copiar ID</button>
+          <div style="margin-bottom:1rem">
+            <p style="color:var(--accent);font-weight:600;font-size:0.85rem;margin-bottom:0.3rem">🚛 Servidor 1</p>
+            <p class="value" id="sessionId1" style="font-size:1.1rem">76561198885257205/101</p>
+            <button class="copy-btn" onclick="copyText('sessionId1')" style="margin-top:0.4rem">📋 Copiar</button>
+          </div>
+          <div>
+            <p style="color:var(--gold);font-weight:600;font-size:0.85rem;margin-bottom:0.3rem">🚛 Servidor 2</p>
+            <p class="value" id="sessionId2" style="font-size:1.1rem">76561198031195240/101</p>
+            <button class="copy-btn" onclick="copyText('sessionId2')" style="margin-top:0.4rem">📋 Copiar</button>
+          </div>
+          <p class="label" style="margin-top:0.8rem">Pega el ID en Convoy → Buscar</p>
         </div>
         <div class="info-card fade-in">
           <h3>⚙️ Configuracion</h3>
@@ -90,36 +101,51 @@
       </p>
       <div class="mod-list">
         <div class="mod-item fade-in">
-          <div class="mod-info"><span class="mod-number">01</span><span class="mod-name">Realistic Air-Condition/Heating Automatic Sound</span></div>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3618145782" class="mod-link" target="_blank">⬇ Workshop</a>
+          <div class="mod-info"><span class="mod-number">01</span><span class="mod-name">Realistic Air-Condition/Heating
+              Automatic Sound</span></div>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3618145782" class="mod-link" target="_blank">⬇
+            Workshop</a>
         </div>
         <div class="mod-item fade-in">
-          <div class="mod-info"><span class="mod-number">02</span><span class="mod-name">Extended Traffic Light Timing</span></div>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2164516577" class="mod-link" target="_blank">⬇ Workshop</a>
+          <div class="mod-info"><span class="mod-number">02</span><span class="mod-name">Extended Traffic Light
+              Timing</span></div>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2164516577" class="mod-link" target="_blank">⬇
+            Workshop</a>
         </div>
         <div class="mod-item fade-in">
           <div class="mod-info"><span class="mod-number">03</span><span class="mod-name">Tjs ATS HD GPS</span></div>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3134138996" class="mod-link" target="_blank">⬇ Workshop</a>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3134138996" class="mod-link" target="_blank">⬇
+            Workshop</a>
         </div>
         <div class="mod-item fade-in">
-          <div class="mod-info"><span class="mod-number">04</span><span class="mod-name">ATS - Realistic Rain And Water And Thunder Sounds</span></div>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3103012397" class="mod-link" target="_blank">⬇ Workshop</a>
+          <div class="mod-info"><span class="mod-number">04</span><span class="mod-name">ATS - Realistic Rain And Water
+              And Thunder Sounds</span></div>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3103012397" class="mod-link" target="_blank">⬇
+            Workshop</a>
         </div>
         <div class="mod-item fade-in">
-          <div class="mod-info"><span class="mod-number">05</span><span class="mod-name">Kenworth T600 T800 y W900</span></div>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3409551902" class="mod-link" target="_blank">⬇ Workshop</a>
+          <div class="mod-info"><span class="mod-number">05</span><span class="mod-name">Kenworth T600 T800 y
+              W900</span></div>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3409551902" class="mod-link" target="_blank">⬇
+            Workshop</a>
         </div>
         <div class="mod-item fade-in">
-          <div class="mod-info"><span class="mod-number">06</span><span class="mod-name">Realistic Brutal Graphics And Weather</span></div>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3103055868" class="mod-link" target="_blank">⬇ Workshop</a>
+          <div class="mod-info"><span class="mod-number">06</span><span class="mod-name">Realistic Brutal Graphics And
+              Weather</span></div>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3103055868" class="mod-link" target="_blank">⬇
+            Workshop</a>
         </div>
         <div class="mod-item fade-in">
-          <div class="mod-info"><span class="mod-number">07</span><span class="mod-name">True Mirror FOV for ATS</span></div>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1823739259" class="mod-link" target="_blank">⬇ Workshop</a>
+          <div class="mod-info"><span class="mod-number">07</span><span class="mod-name">True Mirror FOV for ATS</span>
+          </div>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1823739259" class="mod-link" target="_blank">⬇
+            Workshop</a>
         </div>
         <div class="mod-item fade-in">
-          <div class="mod-info"><span class="mod-number">08</span><span class="mod-name">Realistic Truck Physics Mod v9.1 (by Frkn64)</span></div>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2254213086" class="mod-link" target="_blank">⬇ Workshop</a>
+          <div class="mod-info"><span class="mod-number">08</span><span class="mod-name">Realistic Truck Physics Mod
+              v9.1 (by Frkn64)</span></div>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2254213086" class="mod-link" target="_blank">⬇
+            Workshop</a>
         </div>
       </div>
     </div>
@@ -132,27 +158,48 @@
       <div class="rules-list">
         <div class="rule fade-in">
           <span class="rule-icon">🛣️</span>
-          <div><h4>Respeta tu carril</h4><p>Manten tu carril en todo momento. No invadas el carril contrario excepto para adelantar con precaucion.</p></div>
+          <div>
+            <h4>Respeta tu carril</h4>
+            <p>Manten tu carril en todo momento. No invadas el carril contrario excepto para adelantar con precaucion.
+            </p>
+          </div>
         </div>
         <div class="rule fade-in">
           <span class="rule-icon">🤝</span>
-          <div><h4>Respeto mutuo</h4><p>Trata a todos los jugadores con respeto. No se tolera lenguaje ofensivo, discriminacion ni comportamiento toxico.</p></div>
+          <div>
+            <h4>Respeto mutuo</h4>
+            <p>Trata a todos los jugadores con respeto. No se tolera lenguaje ofensivo, discriminacion ni comportamiento
+              toxico.</p>
+          </div>
         </div>
         <div class="rule fade-in">
           <span class="rule-icon">💥</span>
-          <div><h4>No chocar a proposito</h4><p>Los choques intencionales contra otros jugadores resultaran en expulsion inmediata del convoy.</p></div>
+          <div>
+            <h4>No chocar a proposito</h4>
+            <p>Los choques intencionales contra otros jugadores resultaran en expulsion inmediata del convoy.</p>
+          </div>
         </div>
         <div class="rule fade-in">
           <span class="rule-icon">🎤</span>
-          <div><h4>Canal de voz</h4><p>Conectate al canal de voz cuando estes en convoy para mejor coordinacion y mas diversion.</p></div>
+          <div>
+            <h4>Canal de voz</h4>
+            <p>Conectate al canal de voz cuando estes en convoy para mejor coordinacion y mas diversion.</p>
+          </div>
         </div>
         <div class="rule fade-in">
           <span class="rule-icon">🧩</span>
-          <div><h4>Mods requeridos</h4><p>Instala todos los mods listados arriba antes de unirte. Esto asegura que todos tengan la misma experiencia.</p></div>
+          <div>
+            <h4>Mods requeridos</h4>
+            <p>Instala todos los mods listados arriba antes de unirte. Esto asegura que todos tengan la misma
+              experiencia.</p>
+          </div>
         </div>
         <div class="rule fade-in">
           <span class="rule-icon">⏰</span>
-          <div><h4>Puntualidad</h4><p>Si se programa un convoy grupal, intenta llegar a tiempo. Avisa si no puedes asistir.</p></div>
+          <div>
+            <h4>Puntualidad</h4>
+            <p>Si se programa un convoy grupal, intenta llegar a tiempo. Avisa si no puedes asistir.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -163,18 +210,22 @@
     <div class="container">
       <h2 class="section-title fade-in">📸 GALERIA</h2>
       <p style="text-align:center;color:var(--text2);margin-bottom:2rem" class="fade-in">
-        Capturas de nuestros mejores momentos en ruta
+        Capturas de nuestros mejores momentos en ruta — se actualizan desde Discord
       </p>
-      <div class="gallery-grid">
-        <div class="gallery-item fade-in"><div class="gallery-placeholder">🚛</div></div>
-        <div class="gallery-item fade-in"><div class="gallery-placeholder">🏔️</div></div>
-        <div class="gallery-item fade-in"><div class="gallery-placeholder">🌅</div></div>
-        <div class="gallery-item fade-in"><div class="gallery-placeholder">🛣️</div></div>
-        <div class="gallery-item fade-in"><div class="gallery-placeholder">🌧️</div></div>
-        <div class="gallery-item fade-in"><div class="gallery-placeholder">🌃</div></div>
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item fade-in">
+          <div class="gallery-placeholder">📷</div>
+        </div>
+        <div class="gallery-item fade-in">
+          <div class="gallery-placeholder">🚛</div>
+        </div>
+        <div class="gallery-item fade-in">
+          <div class="gallery-placeholder">🛣️</div>
+        </div>
       </div>
-      <p style="text-align:center;color:var(--text2);margin-top:1.5rem;font-size:0.9rem" class="fade-in">
-        Envia tus capturas en <strong>#capturas</strong> en Discord para aparecer aqui
+      <p id="galleryEmpty" style="text-align:center;color:var(--text2);margin-top:1.5rem;font-size:0.9rem;display:none"
+        class="fade-in">
+        Sube capturas en <strong>#capturas</strong> en Discord y apareceran aqui automaticamente 📸
       </p>
     </div>
   </section>
@@ -186,19 +237,32 @@
       <div class="links-grid">
         <a href="https://discord.gg/fw8rq38Ewy" class="link-card fade-in" target="_blank">
           <span class="link-icon">💬</span>
-          <div class="link-info"><h3>Discord</h3><p>Unete a nuestra comunidad</p></div>
+          <div class="link-info">
+            <h3>Discord</h3>
+            <p>Unete a nuestra comunidad</p>
+          </div>
         </a>
         <a href="https://github.com/SamiGamin/ats-discord-bot" class="link-card fade-in" target="_blank">
           <span class="link-icon">🤖</span>
-          <div class="link-info"><h3>Bot de Discord</h3><p>Monitor del servidor ATS</p></div>
+          <div class="link-info">
+            <h3>Bot de Discord</h3>
+            <p>Monitor del servidor ATS</p>
+          </div>
         </a>
-        <a href="https://store.steampowered.com/app/270880/American_Truck_Simulator/" class="link-card fade-in" target="_blank">
+        <a href="https://store.steampowered.com/app/270880/American_Truck_Simulator/" class="link-card fade-in"
+          target="_blank">
           <span class="link-icon">🎮</span>
-          <div class="link-info"><h3>ATS en Steam</h3><p>Compra el juego</p></div>
+          <div class="link-info">
+            <h3>ATS en Steam</h3>
+            <p>Compra el juego</p>
+          </div>
         </a>
         <a href="https://worldoftrucks.com" class="link-card fade-in" target="_blank">
           <span class="link-icon">🌍</span>
-          <div class="link-info"><h3>World of Trucks</h3><p>Comunidad oficial de SCS</p></div>
+          <div class="link-info">
+            <h3>World of Trucks</h3>
+            <p>Comunidad oficial de SCS</p>
+          </div>
         </a>
       </div>
     </div>
@@ -245,12 +309,12 @@
   <!-- ─── SCRIPTS ─── -->
   <script>
     // Copiar ID
-    function copyId() {
-      const id = document.getElementById('sessionId').textContent;
+    function copyText(elementId) {
+      const id = document.getElementById(elementId).textContent;
       navigator.clipboard.writeText(id).then(() => {
-        const btn = document.querySelector('.copy-btn');
+        const btn = event.target;
         btn.textContent = '✅ Copiado!';
-        setTimeout(() => btn.textContent = '📋 Copiar ID', 2000);
+        setTimeout(() => btn.textContent = '📋 Copiar', 2000);
       });
     }
 
@@ -295,7 +359,39 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Cargar galeria desde gallery.json
+    async function loadGallery() {
+      try {
+        const res = await fetch('gallery.json');
+        if (!res.ok) return;
+        const images = await res.json();
+        if (images.length === 0) {
+          document.getElementById('galleryEmpty').style.display = 'block';
+          return;
+        }
+        const grid = document.getElementById('galleryGrid');
+        grid.innerHTML = '';
+        images.reverse().forEach(img => {
+          const item = document.createElement('div');
+          item.className = 'gallery-item fade-in visible';
+          item.innerHTML = `<img src="${img.url}" alt="Captura por ${img.author}" loading="lazy">
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem;
+              background:linear-gradient(transparent,rgba(0,0,0,0.8));
+              font-size:0.8rem;color:#ccc;opacity:0;transition:.3s">
+              📸 ${img.author}
+            </div>`;
+          item.addEventListener('mouseenter', () => item.lastElementChild.style.opacity = '1');
+          item.addEventListener('mouseleave', () => item.lastElementChild.style.opacity = '0');
+          grid.appendChild(item);
+        });
+      } catch (e) {
+        document.getElementById('galleryEmpty').style.display = 'block';
+      }
+    }
+    loadGallery();
   </script>
 
 </body>
+
 </html>

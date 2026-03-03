@@ -435,7 +435,12 @@
     /* ── Gallery from gallery.json ── */
     async function loadGallery() {
       try {
-        const res = await fetch('https://raw.githubusercontent.com/SamiGamin/ildc-gallery-bot/main/gallery.json');
+        // Intentar primero desde GitHub (URLs permanentes)
+        let res = await fetch('https://raw.githubusercontent.com/SamiGamin/ildc-website/master/gallery.json');
+        // Si falla, usar gallery.json local como fallback
+        if (!res.ok) {
+          res = await fetch('gallery.json');
+        }
         if (!res.ok) return;
         const images = await res.json();
         if (images.length === 0) {

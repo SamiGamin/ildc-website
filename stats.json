@@ -23,6 +23,12 @@
       "totalMinutes": 0,
       "lastSeen": "2026-03-03T20:19:34.285Z",
       "joinedAt": null
+    },
+    "FERCHO 993": {
+      "connections": 1,
+      "totalMinutes": 0,
+      "lastSeen": "2026-03-03T22:12:44.110Z",
+      "joinedAt": 1772575964110
     }
   },
   "totalSessions": 6

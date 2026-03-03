@@ -6,533 +6,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>(ILDC) Imperio Latino de Carga | American Truck Simulator</title>
   <meta name="description"
-    content="Convoy latinoamericano de American Truck Simulator. Unete a nuestras rutas, descarga los mods y conecta con camioneros de toda Latinoamerica.">
+    content="Convoy latinoamericano de American Truck Simulator. Unete a nuestras rutas y conecta con camioneros de toda Latinoamerica.">
   <meta name="theme-color" content="#0a0a0f">
   <meta name="referrer" content="no-referrer">
   <link rel="icon" href="img/logo.png">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 
 <body>
 
   <!-- NAV -->
-  <nav id="navbar" role="navigation" aria-label="Navegacion principal">
-    <a href="#" class="nav-logo" data-page="inicio">
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">
       <img src="img/logo.png" alt="ILDC Logo" width="42" height="42">
       <span>ILDC</span>
     </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#" data-page="inicio" class="active">Inicio</a></li>
-      <li><a href="#" data-page="info">Servidor</a></li>
-      <li><a href="#" data-page="mods">Mods</a></li>
-      <li><a href="#" data-page="reglas">Reglas</a></li>
-      <li><a href="#" data-page="galeria">Galeria</a></li>
-      <li><a href="#" data-page="links">Links</a></li>
-      <li><a href="#" data-page="miembros">Equipo</a></li>
+      <li><a href="index.html" class="active">Inicio</a></li>
+      <li><a href="servidor.html">Servidor</a></li>
+      <li><a href="mods.html">Mods</a></li>
+      <li><a href="reglas.html">Reglas</a></li>
+      <li><a href="galeria.html">Galeria</a></li>
+      <li><a href="links.html">Links</a></li>
+      <li><a href="equipo.html">Equipo</a></li>
     </ul>
   </nav>
 
-  <!-- PAGES CONTAINER -->
-  <main id="pagesContainer">
-
-    <!-- PAGE: INICIO -->
-    <section class="page active" id="page-inicio">
-      <div class="hero">
-        <div class="hero-content">
-          <img src="img/logo.png" alt="ILDC Logo" class="hero-logo" width="180" height="180">
-          <h1>IMPERIO LATINO DE CARGA</h1>
-          <p class="subtitle">Convoy latinoamericano &#x2014; American Truck Simulator</p>
-          <div class="hero-buttons">
-            <a href="https://discord.gg/fw8rq38Ewy" class="btn btn-primary" target="_blank" rel="noopener">&#x1F4AC;
-              Unete al Discord</a>
-            <a href="#" class="btn btn-secondary" data-page="info">&#x1F4CB; Como unirse</a>
-          </div>
-          <div class="page-nav-hints">
-            <a href="#" data-page="info" class="hint-card">
-              <span class="hint-icon">&#x1F4E1;</span>
-              <span>Servidor</span>
-            </a>
-            <a href="#" data-page="mods" class="hint-card">
-              <span class="hint-icon">&#x1F9E9;</span>
-              <span>Mods</span>
-            </a>
-            <a href="#" data-page="galeria" class="hint-card">
-              <span class="hint-icon">&#x1F4F8;</span>
-              <span>Galeria</span>
-            </a>
-            <a href="#" data-page="miembros" class="hint-card">
-              <span class="hint-icon">&#x1F465;</span>
-              <span>Equipo</span>
-            </a>
-          </div>
-        </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content fade-in">
+      <img src="img/logo.png" alt="ILDC Logo" class="hero-logo" width="160" height="160">
+      <h1>IMPERIO LATINO<br>DE CARGA</h1>
+      <p class="subtitle">Convoy latinoamericano &#x2014; American Truck Simulator</p>
+      <div class="hero-buttons">
+        <a href="https://discord.gg/fw8rq38Ewy" class="btn btn-primary" target="_blank" rel="noopener">&#x1F4AC; Unete
+          al Discord</a>
+        <a href="servidor.html" class="btn btn-secondary">&#x1F4CB; Como unirse</a>
       </div>
-    </section>
-
-    <!-- PAGE: INFO -->
-    <section class="page" id="page-info">
-      <div class="page-content">
-        <h2 class="section-title">&#x1F4E1; INFORMACION DEL SERVIDOR</h2>
-        <div class="info-grid">
-
-          <div class="info-card">
-            <h3>&#x1F4CC; Nombre del Servidor</h3>
-            <p class="value">(ILDC) Imperio Latino de Carga</p>
-            <p class="label">Buscalo en Convoy &#x2192; Buscar</p>
-          </div>
-
-          <div class="info-card">
-            <h3>&#x1F522; ID de Sesion</h3>
-            <div class="server-block">
-              <p class="server-tag s1">&#x1F69B; Servidor 1</p>
-              <p class="session-value" id="sessionId1">76561198885257205/101</p>
-              <button class="copy-btn" onclick="copyText('sessionId1')">&#x1F4CB; Copiar</button>
-            </div>
-            <div class="server-block">
-              <p class="server-tag s2">&#x1F69B; Servidor 2</p>
-              <p class="session-value" id="sessionId2">76561198031195240/101</p>
-              <button class="copy-btn" onclick="copyText('sessionId2')">&#x1F4CB; Copiar</button>
-            </div>
-            <p class="label">Pega el ID en Convoy &#x2192; Buscar</p>
-          </div>
-
-          <div class="info-card">
-            <h3>&#x2699;&#xFE0F; Configuracion</h3>
-            <p class="value" style="font-size:1rem;line-height:2">
-              &#x1F465; Max: <strong>8 jugadores</strong><br>
-              &#x1F697; Trafico IA: <strong>SI</strong><br>
-              &#x1F4A5; Da&#xF1;o PvP: <strong>SI</strong><br>
-              &#x1F6A6; Limite velocidad: <strong>NO</strong><br>
-              &#x1F512; Contrase&#xF1;a: <strong>NO</strong>
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>&#x1F50D; Como Unirse</h3>
-            <p style="color:var(--text2);line-height:2">
-              <strong>1.</strong> Descarga los mods<br>
-              <strong>2.</strong> Abre ATS &#x2192; Convoy &#x2192; Buscar<br>
-              <strong>3.</strong> Pega el ID o busca "Imperio Latino"<br>
-              <strong>4.</strong> Activa filtro <em>"Mostrar con mods"</em><br>
-              <strong>5.</strong> &#xA1;Unete y a rodar! &#x1F69B;
-            </p>
-          </div>
-
-        </div>
+      <div class="page-nav-hints">
+        <a href="servidor.html" class="hint-card">
+          <span class="hint-icon">&#x1F4E1;</span>
+          <span>Servidor</span>
+        </a>
+        <a href="mods.html" class="hint-card">
+          <span class="hint-icon">&#x1F9E9;</span>
+          <span>Mods</span>
+        </a>
+        <a href="galeria.html" class="hint-card">
+          <span class="hint-icon">&#x1F4F8;</span>
+          <span>Galeria</span>
+        </a>
+        <a href="equipo.html" class="hint-card">
+          <span class="hint-icon">&#x1F465;</span>
+          <span>Equipo</span>
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- PAGE: MODS -->
-    <section class="page" id="page-mods">
-      <div class="page-content">
-        <h2 class="section-title">&#x1F9E9; MODS REQUERIDOS</h2>
-        <p class="section-subtitle">
-          Descarga e instala estos mods <strong>en este orden</strong> antes de unirte al convoy
-        </p>
-        <div class="mod-list">
-          <div class="mod-item">
-            <div class="mod-info"><span class="mod-number">01</span><span class="mod-name">Realistic
-                Air-Condition/Heating Automatic Sound</span></div>
-            <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3618145782" class="mod-link" target="_blank"
-              rel="noopener">&#x2B07; Workshop</a>
-          </div>
-          <div class="mod-item">
-            <div class="mod-info"><span class="mod-number">02</span><span class="mod-name">Extended Traffic Light
-                Timing</span></div>
-            <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2164516577" class="mod-link" target="_blank"
-              rel="noopener">&#x2B07; Workshop</a>
-          </div>
-          <div class="mod-item">
-            <div class="mod-info"><span class="mod-number">03</span><span class="mod-name">Tjs ATS HD GPS</span></div>
-            <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3134138996" class="mod-link" target="_blank"
-              rel="noopener">&#x2B07; Workshop</a>
-          </div>
-          <div class="mod-item">
-            <div class="mod-info"><span class="mod-number">04</span><span class="mod-name">ATS - Realistic Rain And
-                Water And Thunder Sounds</span></div>
-            <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3103012397" class="mod-link" target="_blank"
-              rel="noopener">&#x2B07; Workshop</a>
-          </div>
-          <div class="mod-item">
-            <div class="mod-info"><span class="mod-number">05</span><span class="mod-name">Kenworth T600 T800 y
-                W900</span></div>
-            <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3409551902" class="mod-link" target="_blank"
-              rel="noopener">&#x2B07; Workshop</a>
-          </div>
-          <div class="mod-item">
-            <div class="mod-info"><span class="mod-number">06</span><span class="mod-name">Realistic Brutal Graphics And
-                Weather</span></div>
-            <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3103055868" class="mod-link" target="_blank"
-              rel="noopener">&#x2B07; Workshop</a>
-          </div>
-          <div class="mod-item">
-            <div class="mod-info"><span class="mod-number">07</span><span class="mod-name">True Mirror FOV for
-                ATS</span></div>
-            <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1823739259" class="mod-link" target="_blank"
-              rel="noopener">&#x2B07; Workshop</a>
-          </div>
-          <div class="mod-item">
-            <div class="mod-info"><span class="mod-number">08</span><span class="mod-name">Realistic Truck Physics Mod
-                v9.1 (by Frkn64)</span></div>
-            <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2254213086" class="mod-link" target="_blank"
-              rel="noopener">&#x2B07; Workshop</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PAGE: REGLAS -->
-    <section class="page" id="page-reglas">
-      <div class="page-content">
-        <h2 class="section-title">&#x1F4DC; REGLAS DEL CONVOY</h2>
-        <div class="rules-list">
-          <div class="rule">
-            <span class="rule-icon">&#x1F6E3;&#xFE0F;</span>
-            <div>
-              <h4>Respeta tu carril</h4>
-              <p>Manten tu carril en todo momento. No invadas el carril contrario excepto para adelantar con precaucion.
-              </p>
-            </div>
-          </div>
-          <div class="rule">
-            <span class="rule-icon">&#x1F91D;</span>
-            <div>
-              <h4>Respeto mutuo</h4>
-              <p>Trata a todos los jugadores con respeto. No se tolera lenguaje ofensivo ni comportamiento toxico.</p>
-            </div>
-          </div>
-          <div class="rule">
-            <span class="rule-icon">&#x1F4A5;</span>
-            <div>
-              <h4>No chocar a proposito</h4>
-              <p>Los choques intencionales contra otros jugadores resultaran en expulsion inmediata del convoy.</p>
-            </div>
-          </div>
-          <div class="rule">
-            <span class="rule-icon">&#x1F3A4;</span>
-            <div>
-              <h4>Canal de voz</h4>
-              <p>Conectate al canal de voz cuando estes en convoy para mejor coordinacion y mas diversion.</p>
-            </div>
-          </div>
-          <div class="rule">
-            <span class="rule-icon">&#x1F9E9;</span>
-            <div>
-              <h4>Mods requeridos</h4>
-              <p>Instala todos los mods listados antes de unirte. Esto asegura que todos tengan la misma experiencia.
-              </p>
-            </div>
-          </div>
-          <div class="rule">
-            <span class="rule-icon">&#x23F0;</span>
-            <div>
-              <h4>Puntualidad</h4>
-              <p>Si se programa un convoy grupal, intenta llegar a tiempo. Avisa si no puedes asistir.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PAGE: GALERIA -->
-    <section class="page" id="page-galeria">
-      <div class="page-content">
-        <h2 class="section-title">&#x1F4F8; GALERIA</h2>
-        <p class="section-subtitle">Capturas de nuestros mejores momentos en ruta &#x2014; se actualizan desde Discord
-        </p>
-        <div class="gallery-grid" id="galleryGrid">
-          <div class="gallery-item">
-            <div class="gallery-placeholder">&#x1F4F7;</div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-placeholder">&#x1F69B;</div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-placeholder">&#x1F6E3;&#xFE0F;</div>
-          </div>
-        </div>
-        <p id="galleryEmpty" class="section-subtitle" style="display:none;margin-top:1.5rem">
-          Sube capturas en <strong>#capturas</strong> en Discord y apareceran aqui automaticamente &#x1F4F8;
-        </p>
-      </div>
-    </section>
-
-    <!-- PAGE: LINKS -->
-    <section class="page" id="page-links">
-      <div class="page-content">
-        <h2 class="section-title">&#x1F517; LINKS UTILES</h2>
-        <div class="links-grid">
-          <a href="https://discord.gg/fw8rq38Ewy" class="link-card" target="_blank" rel="noopener">
-            <span class="link-icon">&#x1F4AC;</span>
-            <div class="link-info">
-              <h3>Discord</h3>
-              <p>Unete a nuestra comunidad</p>
-            </div>
-          </a>
-          <a href="https://github.com/SamiGamin/ats-discord-bot" class="link-card" target="_blank" rel="noopener">
-            <span class="link-icon">&#x1F916;</span>
-            <div class="link-info">
-              <h3>Bot de Discord</h3>
-              <p>Monitor del servidor ATS</p>
-            </div>
-          </a>
-          <a href="https://store.steampowered.com/app/270880/American_Truck_Simulator/" class="link-card"
-            target="_blank" rel="noopener">
-            <span class="link-icon">&#x1F3AE;</span>
-            <div class="link-info">
-              <h3>ATS en Steam</h3>
-              <p>Compra el juego</p>
-            </div>
-          </a>
-          <a href="https://worldoftrucks.com" class="link-card" target="_blank" rel="noopener">
-            <span class="link-icon">&#x1F310;</span>
-            <div class="link-info">
-              <h3>World of Trucks</h3>
-              <p>Comunidad oficial de SCS</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- PAGE: MIEMBROS -->
-    <section class="page" id="page-miembros">
-      <div class="page-content">
-        <h2 class="section-title">&#x1F465; EQUIPO</h2>
-        <p class="section-subtitle" id="teamSubtitle">Cargando estadisticas...</p>
-        <div class="members-grid" id="membersGrid"></div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-label="Vista de imagen ampliada">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen">&#x2715;</button>
-    <img id="lightboxImg" src="" alt="Imagen ampliada">
-  </div>
-
-  <!-- FOOTER -->
   <footer>
     <p>&#xA9; 2026 (ILDC) Imperio Latino de Carga &#x2014; Hecho con <span class="heart">&#x2764;</span> para la
       comunidad camionera</p>
   </footer>
 
-  <!-- SCRIPTS -->
-  <script>
-    /* ── Page Navigation System ── */
-    let currentPage = 'inicio';
-    const pages = document.querySelectorAll('.page');
-    const navLinksAll = document.querySelectorAll('[data-page]');
-
-    function navigateTo(pageId, skipAnimation) {
-      if (pageId === currentPage) return;
-
-      const oldPage = document.getElementById('page-' + currentPage);
-      const newPage = document.getElementById('page-' + pageId);
-      if (!newPage) return;
-
-      // Update nav active state
-      document.querySelectorAll('.nav-links a').forEach(a => {
-        a.classList.toggle('active', a.dataset.page === pageId);
-      });
-
-      // Animate out old page
-      if (oldPage && !skipAnimation) {
-        oldPage.classList.add('page-exit');
-        oldPage.classList.remove('active');
-        setTimeout(() => oldPage.classList.remove('page-exit'), 400);
-      } else if (oldPage) {
-        oldPage.classList.remove('active');
-      }
-
-      // Animate in new page
-      setTimeout(() => {
-        newPage.classList.add('active');
-        // Trigger stagger animations on children
-        const items = newPage.querySelectorAll('.info-card, .mod-item, .rule, .gallery-item, .link-card, .member-card');
-        items.forEach((item, i) => {
-          item.style.animationDelay = `${i * 0.06}s`;
-          item.classList.remove('stagger-in');
-          void item.offsetWidth; // force reflow
-          item.classList.add('stagger-in');
-        });
-      }, skipAnimation ? 0 : 150);
-
-      currentPage = pageId;
-      window.scrollTo({ top: 0 });
-
-      // Close mobile menu
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.textContent = '\u2630';
-      document.body.style.overflow = '';
-    }
-
-    // Handle all navigation clicks
-    document.addEventListener('click', (e) => {
-      const link = e.target.closest('[data-page]');
-      if (link) {
-        e.preventDefault();
-        navigateTo(link.dataset.page);
-      }
-    });
-
-    /* ── Copy ID ── */
-    function copyText(elementId) {
-      const text = document.getElementById(elementId).textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = event.target.closest('.copy-btn');
-        const original = btn.textContent;
-        btn.textContent = '\u2705 Copiado!';
-        setTimeout(() => btn.textContent = original, 2000);
-      });
-    }
-
-    /* ── Navbar scroll effect ── */
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
-
-    /* ── Mobile menu ── */
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-
-    menuToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', isOpen);
-      menuToggle.textContent = isOpen ? '\u2715' : '\u2630';
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-
-    /* ── Lightbox ── */
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxClose = document.getElementById('lightboxClose');
-
-    function openLightbox(src, alt) {
-      lightboxImg.src = src;
-      lightboxImg.alt = alt || 'Captura';
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-      lightboxImg.src = '';
-    }
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
-
-    /* ── Gallery ── */
-    async function loadGallery() {
-      try {
-        let res = await fetch('https://raw.githubusercontent.com/SamiGamin/ildc-website/master/gallery.json');
-        if (!res.ok) res = await fetch('gallery.json');
-        if (!res.ok) return;
-        const images = await res.json();
-        if (images.length === 0) {
-          document.getElementById('galleryEmpty').style.display = 'block';
-          return;
-        }
-        const grid = document.getElementById('galleryGrid');
-        grid.innerHTML = '';
-        images.reverse().forEach(img => {
-          const item = document.createElement('div');
-          item.className = 'gallery-item';
-
-          const image = document.createElement('img');
-          image.alt = `Captura por ${img.author}`;
-          image.loading = 'lazy';
-          image.referrerPolicy = 'no-referrer';
-          image.src = img.url;
-          image.onerror = () => {
-            item.remove();
-            if (grid.children.length === 0) document.getElementById('galleryEmpty').style.display = 'block';
-          };
-
-          const overlay = document.createElement('div');
-          overlay.className = 'gallery-overlay';
-          overlay.textContent = `\uD83D\uDCF8 ${img.author}`;
-
-          item.appendChild(image);
-          item.appendChild(overlay);
-          item.addEventListener('click', () => openLightbox(img.url, `Captura por ${img.author}`));
-          grid.appendChild(item);
-        });
-      } catch (e) {
-        document.getElementById('galleryEmpty').style.display = 'block';
-      }
-    }
-    loadGallery();
-
-    /* ── Team ── */
-    async function loadTeam() {
-      try {
-        let res = await fetch('https://raw.githubusercontent.com/SamiGamin/ildc-website/master/stats.json');
-        if (!res.ok) res = await fetch('stats.json');
-        if (!res.ok) return;
-        const stats = await res.json();
-        const players = Object.entries(stats.players || {});
-        if (players.length === 0) {
-          document.getElementById('teamSubtitle').textContent = 'Aun no hay miembros registrados. Unete al convoy!';
-          return;
-        }
-
-        players.sort((a, b) => b[1].totalMinutes - a[1].totalMinutes);
-
-        const medals = ['\uD83E\uDD47', '\uD83E\uDD48', '\uD83E\uDD49'];
-        const grid = document.getElementById('membersGrid');
-        grid.innerHTML = '';
-
-        document.getElementById('teamSubtitle').textContent =
-          `${players.length} camioneros \u2022 ${stats.totalSessions || 0} convoys realizados`;
-
-        players.forEach(([name, data], i) => {
-          const card = document.createElement('div');
-          card.className = 'member-card';
-
-          const hours = Math.floor(data.totalMinutes / 60);
-          const mins = data.totalMinutes % 60;
-          const timeStr = hours > 0 ? `${hours}h ${mins}m` : `${mins}m`;
-
-          const lastDate = data.lastSeen
-            ? new Date(data.lastSeen).toLocaleDateString('es-CO', { day: 'numeric', month: 'short' })
-            : 'N/A';
-
-          const medal = medals[i] || '\uD83D\uDE9B';
-          const badgeClass = i === 0 ? 'badge-leader' : i < 3 ? 'badge-mod' : 'badge-member';
-          const badgeText = i === 0 ? 'Top 1' : i === 1 ? 'Top 2' : i === 2 ? 'Top 3' : 'Camionero';
-
-          card.innerHTML = `
-            <div class="member-avatar">${medal}</div>
-            <p class="member-name">${name}</p>
-            <p class="member-role">\u23F1\uFE0F ${timeStr} \u2022 ${data.connections} viajes</p>
-            <p class="member-role" style="font-size:0.75rem;margin-top:0.2rem">\uD83D\uDCC5 Visto: ${lastDate}</p>
-            <span class="member-badge ${badgeClass}">${badgeText}</span>
-          `;
-          grid.appendChild(card);
-        });
-      } catch (e) {
-        document.getElementById('teamSubtitle').textContent = 'No se pudieron cargar las estadisticas.';
-      }
-    }
-    loadTeam();
-
-    /* ── Keyboard navigation ── */
-    document.addEventListener('keydown', (e) => {
-      const pageOrder = ['inicio', 'info', 'mods', 'reglas', 'galeria', 'links', 'miembros'];
-      const idx = pageOrder.indexOf(currentPage);
-      if (e.key === 'ArrowRight' && idx < pageOrder.length - 1) navigateTo(pageOrder[idx + 1]);
-      if (e.key === 'ArrowLeft' && idx > 0) navigateTo(pageOrder[idx - 1]);
-    });
-  </script>
-
+  <script src="nav.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria | ILDC - Imperio Latino de Carga</title>
+    <meta name="description" content="Galeria de capturas del convoy ILDC de American Truck Simulator.">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="referrer" content="no-referrer">
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="img/logo.png" alt="ILDC Logo" width="42" height="42">
+            <span>ILDC</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servidor.html">Servidor</a></li>
+            <li><a href="mods.html">Mods</a></li>
+            <li><a href="reglas.html">Reglas</a></li>
+            <li><a href="galeria.html" class="active">Galeria</a></li>
+            <li><a href="links.html">Links</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+        </ul>
+    </nav>
+
+    <main class="page-main">
+        <div class="page-content">
+            <h2 class="section-title fade-in">&#x1F4F8; GALERIA</h2>
+            <p class="section-subtitle fade-in">Capturas de nuestros mejores momentos en ruta &#x2014; se actualizan
+                desde Discord</p>
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">&#x1F4F7;</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">&#x1F69B;</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">&#x1F6E3;&#xFE0F;</div>
+                </div>
+            </div>
+            <p id="galleryEmpty" class="section-subtitle" style="display:none;margin-top:1.5rem">
+                Sube capturas en <strong>#capturas</strong> en Discord y apareceran aqui automaticamente &#x1F4F8;
+            </p>
+        </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&#x2715;</button>
+        <img id="lightboxImg" src="" alt="Imagen ampliada">
+    </div>
+
+    <footer>
+        <p>&#xA9; 2026 (ILDC) Imperio Latino de Carga &#x2014; Hecho con <span class="heart">&#x2764;</span> para la
+            comunidad camionera</p>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script>
+        /* Lightbox */
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        document.getElementById('lightboxClose').addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) { lightbox.classList.remove('active'); document.body.style.overflow = ''; } });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { lightbox.classList.remove('active'); document.body.style.overflow = ''; } });
+
+        /* Gallery loader */
+        async function loadGallery() {
+            try {
+                let res = await fetch('https://raw.githubusercontent.com/SamiGamin/ildc-website/master/gallery.json');
+                if (!res.ok) res = await fetch('gallery.json');
+                if (!res.ok) return;
+                const images = await res.json();
+                if (images.length === 0) { document.getElementById('galleryEmpty').style.display = 'block'; return; }
+                const grid = document.getElementById('galleryGrid');
+                grid.innerHTML = '';
+                images.reverse().forEach(img => {
+                    const item = document.createElement('div');
+                    item.className = 'gallery-item fade-in visible';
+                    const image = document.createElement('img');
+                    image.alt = 'Captura por ' + img.author;
+                    image.loading = 'lazy';
+                    image.referrerPolicy = 'no-referrer';
+                    image.src = img.url;
+                    image.onerror = () => { item.remove(); if (grid.children.length === 0) document.getElementById('galleryEmpty').style.display = 'block'; };
+                    const overlay = document.createElement('div');
+                    overlay.className = 'gallery-overlay';
+                    overlay.textContent = '\uD83D\uDCF8 ' + img.author;
+                    item.appendChild(image);
+                    item.appendChild(overlay);
+                    item.addEventListener('click', () => {
+                        lightboxImg.src = img.url;
+                        lightbox.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    });
+                    grid.appendChild(item);
+                });
+            } catch (e) {
+                document.getElementById('galleryEmpty').style.display = 'block';
+            }
+        }
+        loadGallery();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo | ILDC - Imperio Latino de Carga</title>
+    <meta name="description" content="Equipo del convoy ILDC. Ranking de jugadores, tiempo de juego y estadisticas.">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="img/logo.png" alt="ILDC Logo" width="42" height="42">
+            <span>ILDC</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servidor.html">Servidor</a></li>
+            <li><a href="mods.html">Mods</a></li>
+            <li><a href="reglas.html">Reglas</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="links.html">Links</a></li>
+            <li><a href="equipo.html" class="active">Equipo</a></li>
+        </ul>
+    </nav>
+
+    <main class="page-main">
+        <div class="page-content">
+            <h2 class="section-title fade-in">&#x1F465; EQUIPO</h2>
+            <p class="section-subtitle fade-in" id="teamSubtitle">Cargando estadisticas...</p>
+            <div class="members-grid" id="membersGrid"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&#xA9; 2026 (ILDC) Imperio Latino de Carga &#x2014; Hecho con <span class="heart">&#x2764;</span> para la
+            comunidad camionera</p>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script>
+        async function loadTeam() {
+            try {
+                let res = await fetch('https://raw.githubusercontent.com/SamiGamin/ildc-website/master/stats.json');
+                if (!res.ok) res = await fetch('stats.json');
+                if (!res.ok) return;
+                const stats = await res.json();
+                const players = Object.entries(stats.players || {});
+                if (players.length === 0) {
+                    document.getElementById('teamSubtitle').textContent = 'Aun no hay miembros registrados. Unete al convoy!';
+                    return;
+                }
+                players.sort((a, b) => b[1].totalMinutes - a[1].totalMinutes);
+                const medals = ['\uD83E\uDD47', '\uD83E\uDD48', '\uD83E\uDD49'];
+                const grid = document.getElementById('membersGrid');
+                grid.innerHTML = '';
+                document.getElementById('teamSubtitle').textContent =
+                    players.length + ' camioneros \u2022 ' + (stats.totalSessions || 0) + ' convoys realizados';
+                players.forEach(function (entry, i) {
+                    const name = entry[0];
+                    const data = entry[1];
+                    const card = document.createElement('div');
+                    card.className = 'member-card fade-in visible';
+                    const hours = Math.floor(data.totalMinutes / 60);
+                    const mins = data.totalMinutes % 60;
+                    const timeStr = hours > 0 ? hours + 'h ' + mins + 'm' : mins + 'm';
+                    const lastDate = data.lastSeen
+                        ? new Date(data.lastSeen).toLocaleDateString('es-CO', { day: 'numeric', month: 'short' })
+                        : 'N/A';
+                    const medal = medals[i] || '\uD83D\uDE9B';
+                    const badgeClass = i === 0 ? 'badge-leader' : i < 3 ? 'badge-mod' : 'badge-member';
+                    const badgeText = i === 0 ? 'Top 1' : i === 1 ? 'Top 2' : i === 2 ? 'Top 3' : 'Camionero';
+                    card.innerHTML =
+                        '<div class="member-avatar">' + medal + '</div>' +
+                        '<p class="member-name">' + name + '</p>' +
+                        '<p class="member-role">\u23F1\uFE0F ' + timeStr + ' \u2022 ' + data.connections + ' viajes</p>' +
+                        '<p class="member-role" style="font-size:0.75rem;margin-top:0.2rem">\uD83D\uDCC5 Visto: ' + lastDate + '</p>' +
+                        '<span class="member-badge ' + badgeClass + '">' + badgeText + '</span>';
+                    grid.appendChild(card);
+                });
+            } catch (e) {
+                document.getElementById('teamSubtitle').textContent = 'No se pudieron cargar las estadisticas.';
+            }
+        }
+        loadTeam();
+    </script>
+</body>
+
+</html>

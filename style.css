@@ -200,32 +200,18 @@ ul {
 }
 
 /* ═══════════════════════════════════════════════════════
-   PAGE SYSTEM
+   MULTI-PAGE LAYOUT
    ═══════════════════════════════════════════════════════ */
-.page {
-  display: none;
-  min-height: calc(100vh - var(--nav-height));
-  animation: pageIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.page.active {
-  display: block;
-}
-
-.page-exit {
-  animation: pageOut 0.3s ease forwards;
+.page-main {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+  animation: pageIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .page-content {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: var(--sp-3xl) var(--sp-xl) var(--sp-4xl);
-}
-
-/* Stagger animation for children */
-.stagger-in {
-  animation: staggerFadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  opacity: 0;
 }
 
 /* ═══════════════════════════════════════════════════════

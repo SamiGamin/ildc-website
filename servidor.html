@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidor | ILDC - Imperio Latino de Carga</title>
+    <meta name="description"
+        content="Informacion del servidor de convoy de ILDC. IDs de sesion, configuracion y como unirse.">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="img/logo.png" alt="ILDC Logo" width="42" height="42">
+            <span>ILDC</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servidor.html" class="active">Servidor</a></li>
+            <li><a href="mods.html">Mods</a></li>
+            <li><a href="reglas.html">Reglas</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="links.html">Links</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+        </ul>
+    </nav>
+
+    <main class="page-main">
+        <div class="page-content">
+            <h2 class="section-title fade-in">&#x1F4E1; INFORMACION DEL SERVIDOR</h2>
+            <div class="info-grid">
+                <div class="info-card fade-in">
+                    <h3>&#x1F4CC; Nombre del Servidor</h3>
+                    <p class="value">(ILDC) Imperio Latino de Carga</p>
+                    <p class="label">Buscalo en Convoy &#x2192; Buscar</p>
+                </div>
+                <div class="info-card fade-in">
+                    <h3>&#x1F522; ID de Sesion</h3>
+                    <div class="server-block">
+                        <p class="server-tag s1">&#x1F69B; Servidor 1</p>
+                        <p class="session-value" id="sessionId1">76561198885257205/101</p>
+                        <button class="copy-btn" onclick="copyText('sessionId1')">&#x1F4CB; Copiar</button>
+                    </div>
+                    <div class="server-block">
+                        <p class="server-tag s2">&#x1F69B; Servidor 2</p>
+                        <p class="session-value" id="sessionId2">76561198031195240/101</p>
+                        <button class="copy-btn" onclick="copyText('sessionId2')">&#x1F4CB; Copiar</button>
+                    </div>
+                    <p class="label">Pega el ID en Convoy &#x2192; Buscar</p>
+                </div>
+                <div class="info-card fade-in">
+                    <h3>&#x2699;&#xFE0F; Configuracion</h3>
+                    <p class="value" style="font-size:1rem;line-height:2">
+                        &#x1F465; Max: <strong>8 jugadores</strong><br>
+                        &#x1F697; Trafico IA: <strong>SI</strong><br>
+                        &#x1F4A5; Da&#xF1;o PvP: <strong>SI</strong><br>
+                        &#x1F6A6; Limite velocidad: <strong>NO</strong><br>
+                        &#x1F512; Contrase&#xF1;a: <strong>NO</strong>
+                    </p>
+                </div>
+                <div class="info-card fade-in">
+                    <h3>&#x1F50D; Como Unirse</h3>
+                    <p style="color:var(--text2);line-height:2">
+                        <strong>1.</strong> Descarga los mods<br>
+                        <strong>2.</strong> Abre ATS &#x2192; Convoy &#x2192; Buscar<br>
+                        <strong>3.</strong> Pega el ID o busca "Imperio Latino"<br>
+                        <strong>4.</strong> Activa filtro <em>"Mostrar con mods"</em><br>
+                        <strong>5.</strong> &#xA1;Unete y a rodar! &#x1F69B;
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&#xA9; 2026 (ILDC) Imperio Latino de Carga &#x2014; Hecho con <span class="heart">&#x2764;</span> para la
+            comunidad camionera</p>
+    </footer>
+
+    <script src="nav.js"></script>
+</body>
+
+</html>

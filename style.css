@@ -1362,12 +1362,13 @@ footer .heart {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(10, 10, 15, 0.97);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    z-index: 999;
+    background: rgba(10, 10, 15, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     flex-direction: column;
-    padding: var(--sp-2xl) var(--sp-xl);
-    gap: var(--sp-xs);
+    padding: var(--sp-lg) var(--sp-xl);
+    gap: 0;
     overflow-y: auto;
     border-top: 1px solid var(--border);
   }
@@ -1377,10 +1378,20 @@ footer .heart {
     animation: fadeIn 0.2s ease;
   }
 
+  .nav-links li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
   .nav-links a {
     font-size: var(--fs-md);
-    padding: var(--sp-md);
+    padding: var(--sp-md) var(--sp-lg);
     border-radius: var(--r-sm);
+    display: block;
+    width: 100%;
+  }
+
+  .nav-links a.active {
+    background: rgba(255, 215, 0, 0.08);
   }
 
   .nav-links a.active::after {
@@ -1391,6 +1402,13 @@ footer .heart {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1001;
+  }
+
+  .nav-status {
+    margin-right: var(--sp-sm);
+    font-size: 0.65rem;
+    padding: 3px 8px;
   }
 
   .page-content {

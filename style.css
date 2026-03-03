@@ -1358,19 +1358,18 @@ footer .heart {
   .nav-links {
     display: none;
     position: fixed;
-    top: var(--nav-height);
+    top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 999;
-    background: rgba(10, 10, 15, 0.98);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background: #0a0a0f;
     flex-direction: column;
-    padding: var(--sp-lg) var(--sp-xl);
-    gap: 0;
+    justify-content: center;
+    align-items: center;
+    gap: var(--sp-sm);
+    padding: var(--sp-xl);
     overflow-y: auto;
-    border-top: 1px solid var(--border);
   }
 
   .nav-links.open {
@@ -1379,19 +1378,29 @@ footer .heart {
   }
 
   .nav-links li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    list-style: none;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
   }
 
   .nav-links a {
-    font-size: var(--fs-md);
+    font-size: 1.2rem;
     padding: var(--sp-md) var(--sp-lg);
-    border-radius: var(--r-sm);
+    border-radius: var(--r-md);
     display: block;
     width: 100%;
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    transition: var(--tr-base);
   }
 
+  .nav-links a:hover,
   .nav-links a.active {
-    background: rgba(255, 215, 0, 0.08);
+    background: rgba(255, 215, 0, 0.1);
+    border-color: var(--gold);
+    color: var(--gold);
   }
 
   .nav-links a.active::after {
@@ -1402,7 +1411,8 @@ footer .heart {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1001;
+    z-index: 10000;
+    position: relative;
   }
 
   .nav-status {

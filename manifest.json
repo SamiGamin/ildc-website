@@ -1,0 +1,41 @@
+{
+  "name": "ILDC - Imperio Latino de Carga",
+  "short_name": "ILDC",
+  "description": "Convoy latinoamericano de American Truck Simulator. Ranking, galeria y comunidad.",
+  "start_url": "/ildc-website/",
+  "scope": "/ildc-website/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a0a0f",
+  "theme_color": "#ff9900",
+  "lang": "es",
+  "categories": ["games", "social"],
+  "icons": [
+    {
+      "src": "img/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "img/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "img/og-preview.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "label": "Pagina principal de ILDC"
+    }
+  ]
+}

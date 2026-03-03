@@ -47,3 +47,10 @@ function copyText(elementId) {
     setTimeout(() => btn.textContent = original, 2000);
   });
 }
+
+// Register Service Worker (PWA)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  });
+}

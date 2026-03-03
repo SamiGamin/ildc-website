@@ -32,9 +32,9 @@
     },
     "PERÙ- YAN - YT": {
       "connections": 1,
-      "totalMinutes": 0,
+      "totalMinutes": 1,
       "lastSeen": "2026-03-03T22:13:47.304Z",
-      "joinedAt": 1772576027304
+      "joinedAt": null
     }
   },
   "totalSessions": 6

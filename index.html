@@ -7,19 +7,21 @@
   <title>(ILDC) Imperio Latino de Carga | American Truck Simulator</title>
   <meta name="description"
     content="Convoy latinoamericano de American Truck Simulator. Unete a nuestras rutas, descarga los mods y conecta con camioneros de toda Latinoamerica.">
+  <meta name="theme-color" content="#0a0a0f">
+  <meta name="referrer" content="no-referrer">
   <link rel="icon" href="img/logo.png">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- ─── NAV ─── -->
-  <nav id="navbar">
+  <!-- ═══ NAV ═══ -->
+  <nav id="navbar" role="navigation" aria-label="Navegacion principal">
     <a href="#" class="nav-logo">
-      <img src="img/logo.png" alt="ILDC Logo">
+      <img src="img/logo.png" alt="ILDC Logo" width="42" height="42">
       <span>ILDC</span>
     </a>
-    <button class="menu-toggle" id="menuToggle">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#inicio" class="active">Inicio</a></li>
       <li><a href="#info">Servidor</a></li>
@@ -31,43 +33,52 @@
     </ul>
   </nav>
 
-  <!-- ─── HERO ─── -->
+  <!-- ═══ HERO ═══ -->
   <section class="hero" id="inicio">
     <div class="hero-content">
-      <img src="img/logo.png" alt="ILDC Logo" class="hero-logo">
+      <img src="img/logo.png" alt="ILDC Logo" class="hero-logo" width="180" height="180">
       <h1>IMPERIO LATINO DE CARGA</h1>
       <p class="subtitle">Convoy latinoamericano — American Truck Simulator</p>
       <div class="hero-buttons">
-        <a href="https://discord.gg/fw8rq38Ewy" class="btn btn-primary" target="_blank">💬 Unete al Discord</a>
+        <a href="https://discord.gg/fw8rq38Ewy" class="btn btn-primary" target="_blank" rel="noopener">💬 Unete al
+          Discord</a>
         <a href="#info" class="btn btn-secondary">📋 Como unirse</a>
       </div>
     </div>
   </section>
 
-  <!-- ─── INFO DEL SERVIDOR ─── -->
+  <!-- ═══ INFO DEL SERVIDOR ═══ -->
   <section id="info">
     <div class="container">
       <h2 class="section-title fade-in">📡 INFORMACION DEL SERVIDOR</h2>
       <div class="info-grid">
+
+        <!-- Card: Nombre -->
         <div class="info-card fade-in">
           <h3>📌 Nombre del Servidor</h3>
           <p class="value">(ILDC) Imperio Latino de Carga</p>
           <p class="label">Buscalo en Convoy → Buscar</p>
         </div>
+
+        <!-- Card: Session IDs -->
         <div class="info-card fade-in">
           <h3>🔢 ID de Sesion</h3>
-          <div style="margin-bottom:1rem">
-            <p style="color:var(--accent);font-weight:600;font-size:0.85rem;margin-bottom:0.3rem">🚛 Servidor 1</p>
-            <p class="value" id="sessionId1" style="font-size:1.1rem">76561198885257205/101</p>
-            <button class="copy-btn" onclick="copyText('sessionId1')" style="margin-top:0.4rem">📋 Copiar</button>
+          <div class="server-block">
+            <p class="server-tag s1">🚛 Servidor 1</p>
+            <p class="session-value" id="sessionId1">76561198885257205/101</p>
+            <button class="copy-btn" onclick="copyText('sessionId1')" aria-label="Copiar ID del Servidor 1">📋
+              Copiar</button>
           </div>
-          <div>
-            <p style="color:var(--gold);font-weight:600;font-size:0.85rem;margin-bottom:0.3rem">🚛 Servidor 2</p>
-            <p class="value" id="sessionId2" style="font-size:1.1rem">76561198031195240/101</p>
-            <button class="copy-btn" onclick="copyText('sessionId2')" style="margin-top:0.4rem">📋 Copiar</button>
+          <div class="server-block">
+            <p class="server-tag s2">🚛 Servidor 2</p>
+            <p class="session-value" id="sessionId2">76561198031195240/101</p>
+            <button class="copy-btn" onclick="copyText('sessionId2')" aria-label="Copiar ID del Servidor 2">📋
+              Copiar</button>
           </div>
-          <p class="label" style="margin-top:0.8rem">Pega el ID en Convoy → Buscar</p>
+          <p class="label">Pega el ID en Convoy → Buscar</p>
         </div>
+
+        <!-- Card: Config -->
         <div class="info-card fade-in">
           <h3>⚙️ Configuracion</h3>
           <p class="value" style="font-size:1rem;line-height:2">
@@ -78,6 +89,8 @@
             🔑 Contraseña: <strong>NO</strong>
           </p>
         </div>
+
+        <!-- Card: How to join -->
         <div class="info-card fade-in">
           <h3>🔍 Como Unirse</h3>
           <p style="color:var(--text2);line-height:2">
@@ -88,70 +101,71 @@
             <strong>5.</strong> ¡Unete y a rodar! 🚛
           </p>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ─── MODS ─── -->
+  <!-- ═══ MODS ═══ -->
   <section id="mods">
     <div class="container">
       <h2 class="section-title fade-in">🧩 MODS REQUERIDOS</h2>
-      <p style="text-align:center;color:var(--text2);margin-bottom:2rem" class="fade-in">
+      <p class="section-subtitle fade-in">
         Descarga e instala estos mods <strong>en este orden</strong> antes de unirte al convoy
       </p>
       <div class="mod-list">
         <div class="mod-item fade-in">
-          <div class="mod-info"><span class="mod-number">01</span><span class="mod-name">Realistic Air-Condition/Heating
-              Automatic Sound</span></div>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3618145782" class="mod-link" target="_blank">⬇
-            Workshop</a>
+          <div class="mod-info"><span class="mod-number">01</span><span class="mod-name">Realistic
+              Air-Condition/Heating Automatic Sound</span></div>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3618145782" class="mod-link" target="_blank"
+            rel="noopener">⬇ Workshop</a>
         </div>
         <div class="mod-item fade-in">
           <div class="mod-info"><span class="mod-number">02</span><span class="mod-name">Extended Traffic Light
               Timing</span></div>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2164516577" class="mod-link" target="_blank">⬇
-            Workshop</a>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2164516577" class="mod-link" target="_blank"
+            rel="noopener">⬇ Workshop</a>
         </div>
         <div class="mod-item fade-in">
           <div class="mod-info"><span class="mod-number">03</span><span class="mod-name">Tjs ATS HD GPS</span></div>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3134138996" class="mod-link" target="_blank">⬇
-            Workshop</a>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3134138996" class="mod-link" target="_blank"
+            rel="noopener">⬇ Workshop</a>
         </div>
         <div class="mod-item fade-in">
           <div class="mod-info"><span class="mod-number">04</span><span class="mod-name">ATS - Realistic Rain And Water
               And Thunder Sounds</span></div>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3103012397" class="mod-link" target="_blank">⬇
-            Workshop</a>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3103012397" class="mod-link" target="_blank"
+            rel="noopener">⬇ Workshop</a>
         </div>
         <div class="mod-item fade-in">
           <div class="mod-info"><span class="mod-number">05</span><span class="mod-name">Kenworth T600 T800 y
               W900</span></div>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3409551902" class="mod-link" target="_blank">⬇
-            Workshop</a>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3409551902" class="mod-link" target="_blank"
+            rel="noopener">⬇ Workshop</a>
         </div>
         <div class="mod-item fade-in">
           <div class="mod-info"><span class="mod-number">06</span><span class="mod-name">Realistic Brutal Graphics And
               Weather</span></div>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3103055868" class="mod-link" target="_blank">⬇
-            Workshop</a>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3103055868" class="mod-link" target="_blank"
+            rel="noopener">⬇ Workshop</a>
         </div>
         <div class="mod-item fade-in">
-          <div class="mod-info"><span class="mod-number">07</span><span class="mod-name">True Mirror FOV for ATS</span>
-          </div>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1823739259" class="mod-link" target="_blank">⬇
-            Workshop</a>
+          <div class="mod-info"><span class="mod-number">07</span><span class="mod-name">True Mirror FOV for
+              ATS</span></div>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1823739259" class="mod-link" target="_blank"
+            rel="noopener">⬇ Workshop</a>
         </div>
         <div class="mod-item fade-in">
           <div class="mod-info"><span class="mod-number">08</span><span class="mod-name">Realistic Truck Physics Mod
               v9.1 (by Frkn64)</span></div>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2254213086" class="mod-link" target="_blank">⬇
-            Workshop</a>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2254213086" class="mod-link" target="_blank"
+            rel="noopener">⬇ Workshop</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── REGLAS ─── -->
+  <!-- ═══ REGLAS ═══ -->
   <section id="reglas">
     <div class="container">
       <h2 class="section-title fade-in">📜 REGLAS DEL CONVOY</h2>
@@ -205,11 +219,11 @@
     </div>
   </section>
 
-  <!-- ─── GALERIA ─── -->
+  <!-- ═══ GALERIA ═══ -->
   <section id="galeria">
     <div class="container">
       <h2 class="section-title fade-in">📸 GALERIA</h2>
-      <p style="text-align:center;color:var(--text2);margin-bottom:2rem" class="fade-in">
+      <p class="section-subtitle fade-in">
         Capturas de nuestros mejores momentos en ruta — se actualizan desde Discord
       </p>
       <div class="gallery-grid" id="galleryGrid">
@@ -223,26 +237,31 @@
           <div class="gallery-placeholder">🛣️</div>
         </div>
       </div>
-      <p id="galleryEmpty" style="text-align:center;color:var(--text2);margin-top:1.5rem;font-size:0.9rem;display:none"
-        class="fade-in">
+      <p id="galleryEmpty" class="section-subtitle fade-in" style="display:none;margin-top:1.5rem">
         Sube capturas en <strong>#capturas</strong> en Discord y apareceran aqui automaticamente 📸
       </p>
     </div>
   </section>
 
-  <!-- ─── LINKS ─── -->
+  <!-- ═══ LIGHTBOX ═══ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Vista de imagen ampliada">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen">✕</button>
+    <img id="lightboxImg" src="" alt="Imagen ampliada">
+  </div>
+
+  <!-- ═══ LINKS ═══ -->
   <section id="links">
     <div class="container">
       <h2 class="section-title fade-in">🔗 LINKS UTILES</h2>
       <div class="links-grid">
-        <a href="https://discord.gg/fw8rq38Ewy" class="link-card fade-in" target="_blank">
+        <a href="https://discord.gg/fw8rq38Ewy" class="link-card fade-in" target="_blank" rel="noopener">
           <span class="link-icon">💬</span>
           <div class="link-info">
             <h3>Discord</h3>
             <p>Unete a nuestra comunidad</p>
           </div>
         </a>
-        <a href="https://github.com/SamiGamin/ats-discord-bot" class="link-card fade-in" target="_blank">
+        <a href="https://github.com/SamiGamin/ats-discord-bot" class="link-card fade-in" target="_blank" rel="noopener">
           <span class="link-icon">🤖</span>
           <div class="link-info">
             <h3>Bot de Discord</h3>
@@ -250,14 +269,14 @@
           </div>
         </a>
         <a href="https://store.steampowered.com/app/270880/American_Truck_Simulator/" class="link-card fade-in"
-          target="_blank">
+          target="_blank" rel="noopener">
           <span class="link-icon">🎮</span>
           <div class="link-info">
             <h3>ATS en Steam</h3>
             <p>Compra el juego</p>
           </div>
         </a>
-        <a href="https://worldoftrucks.com" class="link-card fade-in" target="_blank">
+        <a href="https://worldoftrucks.com" class="link-card fade-in" target="_blank" rel="noopener">
           <span class="link-icon">🌍</span>
           <div class="link-info">
             <h3>World of Trucks</h3>
@@ -268,7 +287,7 @@
     </div>
   </section>
 
-  <!-- ─── MIEMBROS ─── -->
+  <!-- ═══ MIEMBROS ═══ -->
   <section id="miembros">
     <div class="container">
       <h2 class="section-title fade-in">👥 EQUIPO</h2>
@@ -301,66 +320,117 @@
     </div>
   </section>
 
-  <!-- ─── FOOTER ─── -->
+  <!-- ═══ FOOTER ═══ -->
   <footer>
     <p>© 2026 (ILDC) Imperio Latino de Carga — Hecho con <span class="heart">❤</span> para la comunidad camionera</p>
   </footer>
 
-  <!-- ─── SCRIPTS ─── -->
+  <!-- ═══ SCROLL TO TOP ═══ -->
+  <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">↑</button>
+
+  <!-- ═══ SCRIPTS ═══ -->
   <script>
-    // Copiar ID
+    /* ── Copy ID ── */
     function copyText(elementId) {
-      const id = document.getElementById(elementId).textContent;
-      navigator.clipboard.writeText(id).then(() => {
-        const btn = event.target;
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.target.closest('.copy-btn');
+        const original = btn.textContent;
         btn.textContent = '✅ Copiado!';
-        setTimeout(() => btn.textContent = '📋 Copiar', 2000);
+        setTimeout(() => btn.textContent = original, 2000);
       });
     }
 
-    // Nav scroll
+    /* ── Navbar scroll effect ── */
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
     window.addEventListener('scroll', () => {
-      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    /* ── Mobile menu ── */
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.textContent = isOpen ? '✕' : '☰';
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Menu mobile
-    document.getElementById('menuToggle').addEventListener('click', () => {
-      document.getElementById('navLinks').classList.toggle('open');
-    });
-
-    // Cerrar menu al hacer clic en un link
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    // Close menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        document.getElementById('navLinks').classList.remove('open');
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+        document.body.style.overflow = '';
       });
     });
 
-    // Active nav link on scroll
+    /* ── Active nav on scroll ── */
     const sections = document.querySelectorAll('section');
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(sec => {
-        const top = sec.offsetTop - 100;
+        const top = sec.offsetTop - 120;
         if (window.scrollY >= top) current = sec.getAttribute('id');
       });
-      document.querySelectorAll('.nav-links a').forEach(a => {
-        a.classList.remove('active');
-        if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+      navLinks.querySelectorAll('a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
       });
-    });
+    }, { passive: true });
 
-    // Fade in on scroll
-    const observer = new IntersectionObserver((entries) => {
+    /* ── Fade in on scroll (Intersection Observer) ── */
+    const fadeObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 
-    // Cargar galeria desde gallery.json
+    /* ── Scroll to top button ── */
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 500);
+    }, { passive: true });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* ── Lightbox ── */
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || 'Captura';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      lightboxImg.src = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+    });
+
+    /* ── Gallery from gallery.json ── */
     async function loadGallery() {
       try {
         const res = await fetch('gallery.json');
@@ -375,14 +445,29 @@
         images.reverse().forEach(img => {
           const item = document.createElement('div');
           item.className = 'gallery-item fade-in visible';
-          item.innerHTML = `<img src="${img.url}" alt="Captura por ${img.author}" loading="lazy">
-            <div style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem;
-              background:linear-gradient(transparent,rgba(0,0,0,0.8));
-              font-size:0.8rem;color:#ccc;opacity:0;transition:.3s">
-              📸 ${img.author}
-            </div>`;
-          item.addEventListener('mouseenter', () => item.lastElementChild.style.opacity = '1');
-          item.addEventListener('mouseleave', () => item.lastElementChild.style.opacity = '0');
+
+          const image = document.createElement('img');
+          image.alt = `Captura por ${img.author}`;
+          image.loading = 'lazy';
+          image.referrerPolicy = 'no-referrer';
+          image.src = img.url; // src al final para que onerror ya esté listo
+
+          // Si la imagen falla (link expirado/roto), ocultar el item completo
+          image.onerror = () => {
+            item.remove();
+            // Si no queda ninguna imagen, mostrar mensaje
+            if (grid.children.length === 0) {
+              document.getElementById('galleryEmpty').style.display = 'block';
+            }
+          };
+
+          const overlay = document.createElement('div');
+          overlay.className = 'gallery-overlay';
+          overlay.textContent = `📸 ${img.author}`;
+
+          item.appendChild(image);
+          item.appendChild(overlay);
+          item.addEventListener('click', () => openLightbox(img.url, `Captura por ${img.author}`));
           grid.appendChild(item);
         });
       } catch (e) {

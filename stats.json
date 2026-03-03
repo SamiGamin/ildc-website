@@ -17,6 +17,12 @@
       "totalMinutes": 10,
       "lastSeen": "2026-02-28T00:34:13.610Z",
       "joinedAt": null
+    },
+    "roberthpena13": {
+      "connections": 1,
+      "totalMinutes": 0,
+      "lastSeen": "2026-03-03T20:19:34.285Z",
+      "joinedAt": 1772569174285
     }
   },
   "totalSessions": 6

@@ -292,31 +292,9 @@
   <section id="miembros">
     <div class="container">
       <h2 class="section-title fade-in">&#x1F465; EQUIPO</h2>
-      <div class="members-grid">
-        <div class="member-card fade-in">
-          <div class="member-avatar">&#x1F451;</div>
-          <p class="member-name">Salomon</p>
-          <p class="member-role">Fundador &amp; Lider</p>
-          <span class="member-badge badge-leader">Lider de Convoy</span>
-        </div>
-        <div class="member-card fade-in">
-          <div class="member-avatar">&#x1F69B;</div>
-          <p class="member-name">SamiGamin</p>
-          <p class="member-role">Admin &amp; Desarrollador</p>
-          <span class="member-badge badge-mod">Moderador</span>
-        </div>
-        <div class="member-card fade-in">
-          <div class="member-avatar">&#x1F69B;</div>
-          <p class="member-name">???</p>
-          <p class="member-role">Camionero</p>
-          <span class="member-badge badge-member">Miembro</span>
-        </div>
-        <div class="member-card fade-in">
-          <div class="member-avatar">&#x1F69B;</div>
-          <p class="member-name">???</p>
-          <p class="member-role">Camionero</p>
-          <span class="member-badge badge-member">Miembro</span>
-        </div>
+      <p class="section-subtitle fade-in" id="teamSubtitle">Cargando estadisticas...</p>
+      <div class="members-grid" id="membersGrid">
+        <!-- Se llena dinamicamente desde stats.json -->
       </div>
     </div>
   </section>
@@ -482,6 +460,62 @@
       }
     }
     loadGallery();
+
+    /* ── Team from stats.json ── */
+    async function loadTeam() {
+      try {
+        let res = await fetch('https://raw.githubusercontent.com/SamiGamin/ildc-website/master/stats.json');
+        if (!res.ok) res = await fetch('stats.json');
+        if (!res.ok) return;
+        const stats = await res.json();
+        const players = Object.entries(stats.players || {});
+        if (players.length === 0) {
+          document.getElementById('teamSubtitle').textContent = 'Aun no hay miembros registrados. Unete al convoy!';
+          return;
+        }
+
+        // Ordenar por tiempo total (descendente)
+        players.sort((a, b) => b[1].totalMinutes - a[1].totalMinutes);
+
+        const medals = ['\uD83E\uDD47', '\uD83E\uDD48', '\uD83E\uDD49'];
+        const grid = document.getElementById('membersGrid');
+        grid.innerHTML = '';
+
+        // Subtitulo con total de sesiones
+        const subtitle = document.getElementById('teamSubtitle');
+        subtitle.textContent = `${players.length} camioneros \u2022 ${stats.totalSessions || 0} convoys realizados`;
+
+        players.forEach(([name, data], i) => {
+          const card = document.createElement('div');
+          card.className = 'member-card fade-in visible';
+
+          const hours = Math.floor(data.totalMinutes / 60);
+          const mins = data.totalMinutes % 60;
+          const timeStr = hours > 0 ? `${hours}h ${mins}m` : `${mins}m`;
+
+          const lastDate = data.lastSeen
+            ? new Date(data.lastSeen).toLocaleDateString('es-CO', { day: 'numeric', month: 'short' })
+            : 'N/A';
+
+          const medal = medals[i] || '\uD83D\uDE9B';
+          const badgeClass = i === 0 ? 'badge-leader' : i < 3 ? 'badge-mod' : 'badge-member';
+          const badgeText = i === 0 ? 'Top 1' : i === 1 ? 'Top 2' : i === 2 ? 'Top 3' : 'Camionero';
+
+          card.innerHTML = `
+            <div class="member-avatar">${medal}</div>
+            <p class="member-name">${name}</p>
+            <p class="member-role">\u23F1\uFE0F ${timeStr} \u2022 ${data.connections} viajes</p>
+            <p class="member-role" style="font-size:0.75rem;margin-top:0.2rem">\uD83D\uDCC5 Visto: ${lastDate}</p>
+            <span class="member-badge ${badgeClass}">${badgeText}</span>
+          `;
+
+          grid.appendChild(card);
+        });
+      } catch (e) {
+        document.getElementById('teamSubtitle').textContent = 'No se pudieron cargar las estadisticas.';
+      }
+    }
+    loadTeam();
   </script>
 
 </body>

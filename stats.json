@@ -1,0 +1,23 @@
+{
+  "players": {
+    "TobMBGaming": {
+      "connections": 3,
+      "totalMinutes": 298,
+      "lastSeen": "2026-03-02T23:54:20.555Z",
+      "joinedAt": null
+    },
+    "Salomon": {
+      "connections": 4,
+      "totalMinutes": 367,
+      "lastSeen": "2026-03-02T23:52:35.267Z",
+      "joinedAt": null
+    },
+    "santiago123gutierrez2023": {
+      "connections": 2,
+      "totalMinutes": 10,
+      "lastSeen": "2026-02-28T00:34:13.610Z",
+      "joinedAt": null
+    }
+  },
+  "totalSessions": 4
+}

@@ -322,7 +322,8 @@
 
   <!-- â•â•â• FOOTER â•â•â• -->
   <footer>
-    <p>Â© 2026 (ILDC) Imperio Latino de Carga â€” Hecho con <span class="heart">â¤</span> para la comunidad camionera</p>
+    <p>Â© 2026 (ILDC) Imperio Latino de Carga â€” Hecho con <span class="heart">â¤</span> para la comunidad camionera
+    </p>
   </footer>
 
   <!-- â•â•â• SCROLL TO TOP â•â•â• -->
@@ -433,7 +434,7 @@
     /* â”€â”€ Gallery from gallery.json â”€â”€ */
     async function loadGallery() {
       try {
-        const res = await fetch('gallery.json');
+        const res = await fetch('https://raw.githubusercontent.com/SamiGamin/ildc-gallery-bot/main/gallery.json');
         if (!res.ok) return;
         const images = await res.json();
         if (images.length === 0) {

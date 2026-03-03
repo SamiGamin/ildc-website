@@ -7,8 +7,16 @@
     <title>Equipo | ILDC - Imperio Latino de Carga</title>
     <meta name="description" content="Equipo del convoy ILDC. Ranking de jugadores, tiempo de juego y estadisticas.">
     <meta name="theme-color" content="#0a0a0f">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Equipo | ILDC - Imperio Latino de Carga">
+    <meta property="og:description"
+        content="Ranking de jugadores del convoy ILDC. Tiempo de juego, viajes y estadisticas.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/SamiGamin/ildc-website/master/img/logo.png">
+    <meta property="og:url" content="https://samigamin.github.io/ildc-website/equipo.html">
+    <meta name="twitter:card" content="summary">
     <link rel="icon" href="img/logo.png">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 
 <body>
@@ -18,6 +26,7 @@
             <img src="img/logo.png" alt="ILDC Logo" width="42" height="42">
             <span>ILDC</span>
         </a>
+        <div class="nav-status" id="navStatus"></div>
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Inicio</a></li>
@@ -90,6 +99,7 @@
         }
         loadTeam();
     </script>
+    <script src="status.js"></script>
 </body>
 
 </html>

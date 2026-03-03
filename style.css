@@ -271,6 +271,110 @@ nav.scrolled .nav-logo img {
   letter-spacing: 0.05em;
 }
 
+/* --- Status Indicators --- */
+.nav-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--glass);
+  color: var(--text3);
+  margin-left: auto;
+  margin-right: var(--sp-md);
+  white-space: nowrap;
+  transition: var(--tr-base);
+}
+
+.nav-status:empty {
+  display: none;
+}
+
+.nav-status.online {
+  border-color: rgba(52, 211, 153, 0.3);
+  color: var(--green);
+  background: rgba(52, 211, 153, 0.08);
+}
+
+.nav-status.offline {
+  border-color: var(--border);
+  color: var(--text3);
+}
+
+.status-dot-sm {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text3);
+  flex-shrink: 0;
+}
+
+.nav-status.online .status-dot-sm {
+  background: var(--green);
+  box-shadow: 0 0 8px rgba(52, 211, 153, 0.5);
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+/* Hero status badge */
+.live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  margin-bottom: var(--sp-md);
+  border: 1px solid var(--border);
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  color: var(--text3);
+  transition: var(--tr-base);
+}
+
+.live-status.online {
+  border-color: rgba(52, 211, 153, 0.4);
+  color: var(--green);
+  background: rgba(52, 211, 153, 0.08);
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.1);
+}
+
+.live-status.offline {
+  border-color: var(--border);
+  color: var(--text3);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text3);
+  flex-shrink: 0;
+}
+
+.live-status.online .status-dot {
+  background: var(--green);
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.6);
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+}
+
 .nav-links {
   display: flex;
   gap: 0;

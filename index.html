@@ -9,8 +9,20 @@
     content="Convoy latinoamericano de American Truck Simulator. Unete a nuestras rutas y conecta con camioneros de toda Latinoamerica.">
   <meta name="theme-color" content="#0a0a0f">
   <meta name="referrer" content="no-referrer">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ILDC - Imperio Latino de Carga">
+  <meta property="og:description" content="Convoy latinoamericano de American Truck Simulator. Unete a nuestras rutas!">
+  <meta property="og:image" content="https://raw.githubusercontent.com/SamiGamin/ildc-website/master/img/logo.png">
+  <meta property="og:url" content="https://samigamin.github.io/ildc-website/">
+  <meta property="og:site_name" content="ILDC">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ILDC - Imperio Latino de Carga">
+  <meta name="twitter:description" content="Convoy latinoamericano de American Truck Simulator">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/SamiGamin/ildc-website/master/img/logo.png">
   <link rel="icon" href="img/logo.png">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 
 <body>
@@ -21,6 +33,7 @@
       <img src="img/logo.png" alt="ILDC Logo" width="42" height="42">
       <span>ILDC</span>
     </a>
+    <div class="nav-status" id="navStatus"></div>
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" class="active">Inicio</a></li>
@@ -37,6 +50,11 @@
   <section class="hero">
     <div class="hero-content fade-in">
       <img src="img/logo.png" alt="ILDC Logo" class="hero-logo" width="160" height="160">
+      <!-- Live status badge -->
+      <div class="live-status" id="liveStatus">
+        <span class="status-dot"></span>
+        <span class="status-text">Verificando...</span>
+      </div>
       <h1>IMPERIO LATINO<br>DE CARGA</h1>
       <p class="subtitle">Convoy latinoamericano &#x2014; American Truck Simulator</p>
       <div class="hero-buttons">
@@ -71,6 +89,7 @@
   </footer>
 
   <script src="nav.js"></script>
+  <script src="status.js"></script>
 </body>
 
 </html>

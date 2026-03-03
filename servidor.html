@@ -8,8 +8,15 @@
     <meta name="description"
         content="Informacion del servidor de convoy de ILDC. IDs de sesion, configuracion y como unirse.">
     <meta name="theme-color" content="#0a0a0f">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Servidor | ILDC - Imperio Latino de Carga">
+    <meta property="og:description" content="Info del servidor, IDs de sesion y como unirse al convoy ILDC.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/SamiGamin/ildc-website/master/img/logo.png">
+    <meta property="og:url" content="https://samigamin.github.io/ildc-website/servidor.html">
+    <meta name="twitter:card" content="summary">
     <link rel="icon" href="img/logo.png">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 
 <body>
@@ -19,6 +26,7 @@
             <img src="img/logo.png" alt="ILDC Logo" width="42" height="42">
             <span>ILDC</span>
         </a>
+        <div class="nav-status" id="navStatus"></div>
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Inicio</a></li>
@@ -84,6 +92,7 @@
     </footer>
 
     <script src="nav.js"></script>
+    <script src="status.js"></script>
 </body>
 
 </html>

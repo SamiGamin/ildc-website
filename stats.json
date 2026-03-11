@@ -7,10 +7,10 @@
       "joinedAt": 1772578350692
     },
     "Salomon": {
-      "connections": 8,
+      "connections": 9,
       "totalMinutes": 12395,
-      "lastSeen": "2026-03-11T23:06:09.481Z",
-      "joinedAt": null
+      "lastSeen": "2026-03-11T23:19:32.805Z",
+      "joinedAt": 1773271172805
     },
     "santiago123gutierrez2023": {
       "connections": 2,
@@ -37,5 +37,5 @@
       "joinedAt": null
     }
   },
-  "totalSessions": 8
+  "totalSessions": 9
 }

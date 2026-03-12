@@ -2,15 +2,15 @@
   "players": {
     "TobMBGaming": {
       "connections": 8,
-      "totalMinutes": 511,
+      "totalMinutes": 530,
       "lastSeen": "2026-03-12T00:47:51.287Z",
-      "joinedAt": 1773276471287
+      "joinedAt": null
     },
     "Salomon": {
       "connections": 12,
-      "totalMinutes": 12468,
+      "totalMinutes": 12487,
       "lastSeen": "2026-03-12T00:47:51.288Z",
-      "joinedAt": 1773276471288
+      "joinedAt": null
     },
     "santiago123gutierrez2023": {
       "connections": 2,
@@ -38,15 +38,15 @@
     },
     "Pollito_john": {
       "connections": 1,
-      "totalMinutes": 0,
+      "totalMinutes": 19,
       "lastSeen": "2026-03-12T00:47:51.286Z",
-      "joinedAt": 1773276471286
+      "joinedAt": null
     },
     "ANDREY NARVAEZ": {
       "connections": 1,
-      "totalMinutes": 0,
+      "totalMinutes": 19,
       "lastSeen": "2026-03-12T00:48:06.331Z",
-      "joinedAt": 1773276486331
+      "joinedAt": null
     }
   },
   "totalSessions": 11
